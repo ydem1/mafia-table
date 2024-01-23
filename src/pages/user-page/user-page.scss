@@ -1,0 +1,5 @@
+@import "../../utils/styles/utils.scss";
+
+.user-page {
+  @include page();
+}

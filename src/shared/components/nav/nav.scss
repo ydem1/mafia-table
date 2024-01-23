@@ -1,0 +1,46 @@
+@import "../../../utils/styles/utils.scss";
+
+.nav {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+
+    gap: 15px;
+
+    @include onTable() {
+      flex-direction: row;
+      gap: 45px;
+    }
+
+    @include onDesktop() {
+      gap: 65px;
+    }
+  }
+
+  &__item {
+    font-size: 35px;
+
+
+    @include onTable() {
+      font-size: 21px;
+      font-weight: 600;
+    }
+  }
+
+  &__link {
+    color: $menu-text-color;
+    width: max-content;
+
+    @include onTable() {
+      color: $page-text-color;
+    }
+
+    @include hoverLine(0);
+
+    &--active {
+      @include hoverLine(1);
+    }
+  }
+}

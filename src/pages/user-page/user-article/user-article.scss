@@ -1,0 +1,93 @@
+@import "../../../utils/styles/utils.scss";
+
+.user-article {
+  position: relative;
+
+  &__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 50%;
+
+    @include onTable {
+      bottom: 45%;
+    }
+
+    @include onDesktop {
+      bottom: 35%;
+    }
+
+    border-block: 4px solid $page-main-color;
+
+    z-index: -1;
+
+    background-size: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &__content {
+    @include contentPaddingInline();
+  }
+
+  &__img {
+    border-radius: 0 25% 0 25%;
+    border: 4px solid $page-main-color;
+
+    margin-top: 125px;
+
+    width: 200px;
+
+    @include onTable(){
+      width: 300px;
+    }
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    margin-block: 25px;
+  }
+
+  &__fullname {
+    color: $page-main-color;
+    font-size: 23px;
+    font-weight: 700;
+    line-height: 115%;
+    text-transform: uppercase;
+
+  }
+
+  &__nickname {
+    color: $page-thrid-color;
+    font-size: 16px;
+    line-height: 115%;
+    text-transform: capitalize;
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__title {
+    color: $page-main-color;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 115%;
+    text-transform: capitalize;
+  }
+
+  &__text {
+    margin-bottom: 50px;
+  }
+
+  &__social-list {
+    display: flex;
+    gap: 16px;
+  }
+}

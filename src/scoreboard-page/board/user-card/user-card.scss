@@ -1,0 +1,76 @@
+@import '../../../utils/styles/utils.scss';
+
+.user-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border: 1px solid $elements;
+
+  padding-inline: 15px;
+
+  @include onTable() {
+    padding-inline: 25px 50px;
+  }
+
+  @include hover(border-color, $page-text-color);
+  @include hover(transform, scale(1.03));
+
+  &__right-section {
+    display: flex;
+    align-items: center;
+    
+    gap: 15px;
+
+    @include onTable() {
+      gap: 30px;
+    }
+  }
+
+  &__number {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 21px;
+
+    @include onTable() {
+      font-size: 22px;
+    }
+  }
+
+  &__img {
+    width: 60px;
+    height: 60px;
+
+    margin-block: 10px;
+
+    object-fit: contain;
+
+    @include onTable() {
+      margin-block: 20px;
+    }
+  }
+
+  &__nickname {
+    color: $primary;
+
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 21px;
+
+    @include onTable() {
+      font-size: 17px;
+    }
+  }
+
+  &__score {
+    color: $primary;
+
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 140%;
+
+    @include onTable() {
+      font-size: 22px;
+    }
+  }
+}

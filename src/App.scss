@@ -1,3 +1,9 @@
-.starter {
-  font-size: 18px;
+@import './utils/styles/utils.scss';
+
+.App {
+  padding-block: 30px;
+
+  @include onTable() {
+    padding-block: 15px;
+  }
 }

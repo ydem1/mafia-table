@@ -1,0 +1,86 @@
+@mixin hover($_property, $_toValue) {
+  transition: #{$_property} 0.3s;
+  &:hover {
+    #{$_property}: $_toValue;
+  }
+}
+
+@mixin hoverLine($_visible) {
+  position: relative;
+
+  &::after {
+    content: "";
+  
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+
+    height: 10px; 
+  
+    background-color: $page-main-color;
+    
+    transform: scaleX($_visible); 
+    transform-origin: bottom right;
+    transition: transform 0.3s;
+  }
+
+  &:hover::after {
+    transform: scaleX(1); 
+    transform-origin: bottom left;
+  }
+}
+
+@mixin contentPaddingInline() {
+  padding-inline: 20px;
+
+  @include onTable {
+    padding-inline: 60px;
+  }
+
+  @include onDesktop {
+    padding-inline: 54px;
+  }
+}
+
+@mixin onTable() {
+  @media (min-width:$table-min-width) {
+    @content;
+  }
+}
+
+@mixin onDesktop() {
+  @media (min-width:$desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin pageGrid() {
+
+  @include onTable() {
+
+  }
+
+  @include onDesktop() {
+
+  }
+}
+
+@mixin page() {
+  display: flex;
+  flex-direction: column;
+
+  gap: 60px;
+  padding-block: 30px;
+
+  @include onTable() {
+    gap: 80px;
+    padding-block: 50px;
+  }
+
+  @include onDesktop() {
+    gap: 100px;
+    padding-block: 60px;
+  }
+}

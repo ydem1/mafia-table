@@ -1,0 +1,36 @@
+@import '../../utils/styles/utils.scss';
+
+.board {  
+  &__content {
+    @include contentPaddingInline();
+
+    margin: 0 auto;
+
+    width: 75%;
+
+    @include onTable() {
+    width: 50%;
+    }
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 20px;
+
+    padding: 15px;
+
+    font-size: 13px;
+
+    @include onTable {
+      font-size: 23px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+}

@@ -1,0 +1,51 @@
+@import "./mixins";
+
+.icon {
+  width: 20px;
+  height: 20px;
+
+  background-position: center;
+  background-repeat: no-repeat;
+
+  cursor: pointer;
+
+  @include hover(transform, scale(1.3));
+
+
+  &__logo {
+    width: 100px;
+    height: 70px;
+
+    background-size: contain;
+    background-image: url(../../icons/logo.svg);
+
+    @include hover(transform, none);
+  }
+
+  &__menu {
+    background-image: url(../../icons/menu.svg);
+  }
+
+  &__menu-close {
+    background-image: url(../../icons/menu-close.svg);
+  }
+
+  &__instagram {
+    background-image: url(../../icons/instagram.svg);
+  }
+
+  &__facebook {
+    background-image: url(../../icons/facebook.svg);
+  }
+
+  &__telegram {
+    background-image: url(../../icons/telegram.svg);
+  }
+
+  &--social-link {
+    background-size: cover;
+
+    width: 40px;
+    height: 40px;
+  }
+}

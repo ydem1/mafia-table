@@ -1,0 +1,24 @@
+@import "../../../utils/styles/utils.scss";
+
+.poster {
+  &__content {
+    @include contentPaddingInline();
+  }
+
+  &__img {
+    width: 100%;
+    animation: poster-in 0.8s ease-out both;
+  }
+}
+
+@keyframes poster-in {
+  0% {
+    transform: translateY(-1000px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

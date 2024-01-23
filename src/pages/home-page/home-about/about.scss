@@ -1,0 +1,7 @@
+@import "../../../utils/styles/utils.scss";
+
+.about {
+  &__content {
+    @include contentPaddingInline();
+  }
+}

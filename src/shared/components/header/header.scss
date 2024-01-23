@@ -1,0 +1,27 @@
+@import "../../../utils/styles/utils.scss";
+
+.header {
+  border-bottom: 1px solid $elements;
+
+  &__content {
+    @include contentPaddingInline();
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__nav {
+    display: none;
+
+    @include onTable() {
+      display: block;
+    }
+  }
+
+  &__menu-btn {
+    @include onTable() {
+      display: none;
+    }
+  }
+}

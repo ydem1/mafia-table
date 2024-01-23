@@ -1,0 +1,52 @@
+@import "../../../utils/styles/utils.scss";
+
+.menu {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  
+  background-color: $menu-background-color;
+  
+  animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    @include contentPaddingInline();
+
+    padding-block: 50px;
+
+    @include onTable() {
+      padding-block: 15px;
+    }
+  }
+
+  &__nav {
+    grid-column: 2;
+  }
+
+  &__menu-close-btn {
+    grid-column: 3;
+
+    display: flex;
+    justify-content: end;
+  }
+}
+
+
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
